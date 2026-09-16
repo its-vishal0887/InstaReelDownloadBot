@@ -1,0 +1,14 @@
+node_modules
+npm-debug.log
+
+.env
+
+.git
+.gitignore
+
+downloads
+*.mp4
+*.webm
+**/*.mkv
+
+README.md
