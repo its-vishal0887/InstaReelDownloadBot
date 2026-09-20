@@ -18,6 +18,8 @@ function downloadInstagram(url) {
       ytDLPpath,
       [
         "--no-playlist",
+        "-f", "bv*+ba/b",
+        "--merge-output-format", "mp4",
         "-o", op,
         "--print", "after_move:filepath",
         url
