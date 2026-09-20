@@ -20,12 +20,18 @@ function downloadInstagram(url) {
         "--no-playlist",
         "-f", "bv*+ba/b",
         "--merge-output-format", "mp4",
+        "--ffmpeg-location", "/usr/local/bin/ffmpeg",
         "-o", op,
         "--print", "after_move:filepath",
         url
       ],
-      { timeout: 60000 }, // 60 sec timeout - hang na ho jaaye
+      { timeout: 60000 },
       (error, stdout, stderr) => {
+        console.log("=== YT-DLP STDOUT ===");
+        console.log(stdout);
+        console.log("=== YT-DLP STDERR ===");
+        console.log(stderr);
+
         if (error) {
           console.error("yt-dlp error:", stderr || error.message);
           return rej(new Error(stderr || error.message));
